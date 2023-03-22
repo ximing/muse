@@ -1,0 +1,40 @@
+{
+  "name": "@typoer/muse",
+  "version": "0.0.1",
+  "description": "",
+  "main": "entry.js",
+  "module": "entry.mjs",
+  "typings": "dist/index.d.ts",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf esm cjs tsconfig.tsbuildinfo",
+    "test": "jest",
+    "test:debug": "npx --node-arg=--inspect-brk jest -i",
+    "build": "npm run clean && tsc --emitDeclarationOnly && rollup -c --bundleConfigAsCjs && rollup -c rollup.config.dev.js --bundleConfigAsCjs",
+    "dev": "rollup -c rollup.config.dev.js --bundleConfigAsCjs -w",
+    "build:fix": "esno scripts/postbuild.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.4.3",
+    "@typoer/tsconfig": "workspace:*",
+    "rimraf": "^3.0.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "dependencies": {
+    "@typoer/editor": "workspace:*"
+  },
+  "publishConfig": {
+    "registry": "http://r.npm.sankuai.com/"
+  },
+  "files": [
+    "dist",
+    "entry.js",
+    "entry.mjs"
+  ]
+}

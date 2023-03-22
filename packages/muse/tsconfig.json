@@ -1,0 +1,30 @@
+{
+  "extends": "@typoer/tsconfig/base.json",
+  "include": ["*.d.ts", "src/**/*.ts", "src/*.d.ts"],
+  "exclude": ["dist", "build"],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "types": ["@types/jest", "@types/node", "@types/wechat-miniprogram"],
+    "outDir": "dist",
+    "declaration": true
+  },
+  "ts-node": {
+    // 这些选项是仅由 ts-node 使用的覆盖
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
+  // "compilerOptions": {
+  //   "target": "es2017",
+  //   "module": "esnext",
+  //   "lib": ["esnext", "DOM"],
+  //   "moduleResolution": "node",
+  //   "esModuleInterop": true,
+  //   "strict": true,
+  //   "strictNullChecks": true,
+  //   "resolveJsonModule": true
+  //   // "types": ["vite/client"]
+  // }
+  // 测试ts config  把下面这句话放到 tsconfig目录下 base.json 中
+  // "types": ["vite/client"]
+}

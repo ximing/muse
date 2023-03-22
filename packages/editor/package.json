@@ -1,0 +1,25 @@
+{
+  "name": "@typoer/editor",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "typings": "src/index.ts",
+  "scripts": {
+    "clean": "rimraf dist esm cjs tsconfig.tsbuildinfo",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:debug": "npx --node-arg=--inspect-brk jest -i",
+    "build": "npm run clean && tsc --emitDeclarationOnly && rollup -c --bundleConfigAsCjs && rollup -c rollup.config.cjs.js --bundleConfigAsCjs",
+    "build:fix": "esno scripts/postbuild.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typoer/tsconfig": "workspace:*",
+    "rimraf": "^3.0.2"
+  },
+  "peerDependencies": {},
+  "dependencies": {}
+}

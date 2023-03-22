@@ -1,0 +1,19 @@
+{
+  "name": "@typoer/tsconfig",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "base.json"
+  ],
+  "private": true,
+  "publishConfig": {
+    "registry": "http://r.npm.sankuai.com/"
+  }
+}
