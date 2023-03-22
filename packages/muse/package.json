@@ -2,8 +2,8 @@
   "name": "@typoer/muse",
   "version": "0.0.1",
   "description": "",
-  "main": "entry.js",
-  "module": "entry.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "typings": "dist/index.d.ts",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -20,11 +20,13 @@
   "devDependencies": {
     "jest": "^29.4.3",
     "@typoer/tsconfig": "workspace:*",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "babel-preset-solid": "^1.6.13",
+    "solid-js": "^1.6.15",
+    "@babel/core": "^7.21.3"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "solid-js": "*"
   },
   "dependencies": {
     "@typoer/editor": "workspace:*"

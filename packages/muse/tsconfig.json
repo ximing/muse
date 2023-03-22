@@ -6,7 +6,9 @@
     "skipLibCheck": true,
     "types": ["@types/jest", "@types/node", "@types/wechat-miniprogram"],
     "outDir": "dist",
-    "declaration": true
+    "declaration": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   },
   "ts-node": {
     // 这些选项是仅由 ts-node 使用的覆盖

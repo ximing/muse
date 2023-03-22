@@ -68,7 +68,8 @@ export default {
             bugfixes: true
           }
         ],
-        '@babel/preset-typescript'
+        '@babel/preset-typescript',
+        'solid'
       ],
       plugins: [
         [
