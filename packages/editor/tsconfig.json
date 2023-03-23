@@ -4,7 +4,8 @@
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "jsx": "react-jsx"
   }
   // "compilerOptions": {
   //   "target": "es2017",

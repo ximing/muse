@@ -6,6 +6,7 @@ import { Selection } from '@antv/x6-plugin-selection';
 import { History } from '@antv/x6-plugin-history';
 import { Snapline } from '@antv/x6-plugin-snapline';
 import { Transform } from '@antv/x6-plugin-transform';
+import { EditorShape } from '../shape/editor';
 
 export class GraphManager extends BaseManager {
   graph!: Graph;
@@ -21,13 +22,20 @@ export class GraphManager extends BaseManager {
       height: 80000,
       background: {
         color: '#F2F7FA'
+      },
+      interacting: {
+        nodeMovable(view) {
+          const node = view.cell;
+          const { disableMove } = node.getData() || {};
+          return !disableMove;
+        }
       }
     });
     this.graph.use(
       new Scroller({
         graph: this.graph,
         enabled: true,
-        pannable: true
+        pannable: false
       })
     );
     this.graph.use(
@@ -62,6 +70,21 @@ export class GraphManager extends BaseManager {
       y: 40,
       width: 100,
       height: 40
+    });
+    this.graph.addNode({
+      shape: EditorShape,
+      x: 300,
+      y: 40,
+      ports: [
+        {
+          id: 'port_3',
+          group: 'top'
+        },
+        {
+          id: 'port_4',
+          group: 'top'
+        }
+      ]
     });
   }
 }
